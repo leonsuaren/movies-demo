@@ -2,6 +2,8 @@ import React from 'react';
 
 export const NotFound = () => {
   return(
-    <div>Not Found View</div>
+    <div>
+      <img src='not-found-marvel.png' />
+    </div>
   )
 };
