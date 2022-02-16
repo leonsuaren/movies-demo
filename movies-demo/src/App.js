@@ -2,8 +2,8 @@ import './App.css';
 
 function App() {
   return (
-    <div>
-
+    <div className='container'>
+        <h1>Movies Demo!!</h1>
     </div>
   );
 }
