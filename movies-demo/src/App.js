@@ -7,6 +7,7 @@ import { Favorites } from '../src/views/favorites';
 import { NowPlaying } from '../src/views/now-playing';
 import { Footer } from '../src/components/footer';
 import { NotFound } from '../src/views/not-found';
+import { SingleMovie } from '../src/views/single-movie';
 
 import { MoviesDataBasePovider } from './context';
 
@@ -19,7 +20,8 @@ function App() {
           <div className='container box'>
             <Routes>
               <Route path='/' element={<Home />} />
-              <Route path='now-playing' element={<NowPlaying />} />
+              <Route path='now-playing/' element={<NowPlaying />}/>
+                <Route path='now-playing/movies/:_id' element={<SingleMovie />} />
               <Route path='favorites' element={<Favorites />} />
               <Route path='*' element={<NotFound />} />
             </Routes>

@@ -5,6 +5,7 @@ export const MoviesDataBaseContext = createContext();
 
 export const MoviesDataBasePovider = ({ children }) => {
   const [moviesDataBase, setMoviesDataBase] = useState();
+  const [singleMovie, setSingleMovie] = useState();
 
   useEffect(() => {
     axios.get('http://localhost:8080/movies').then((response) => {
@@ -12,8 +13,12 @@ export const MoviesDataBasePovider = ({ children }) => {
     })
   }, []);
 
+  const fetchOneMovie = (oneMovie) => {
+    setSingleMovie(oneMovie);
+  }
+
   return (
-    <MoviesDataBaseContext.Provider value={{ moviesDataBase }}>
+    <MoviesDataBaseContext.Provider value={{ moviesDataBase, singleMovie, fetchOneMovie }}>
       {children}
     </MoviesDataBaseContext.Provider>
   )
