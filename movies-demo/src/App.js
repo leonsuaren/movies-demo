@@ -5,6 +5,7 @@ import { Navbar } from '../src/components/navbar';
 import { Home } from '../src/views/home';
 import { Favorites } from '../src/views/favorites';
 import { NowPlaying } from '../src/views/now-playing';
+import { Footer } from '../src/components/footer';
 import { NotFound } from '../src/views/not-found';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path='*' element={<NotFound />} />
           </Routes>
         </div>
+        <Footer />
       </Router>
     </div>
   );
