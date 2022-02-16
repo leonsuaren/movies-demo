@@ -10,9 +10,8 @@ export const NowPlaying = () => {
       <div>
         <h1>Now Playing</h1>
       </div>
-      <div className="container col-sm-12">
-        <div className="row">
-          <div class="col-sm-12 grid">
+      <div className="container ">
+          <div class="grid">
             {
               movies.map((movie, key) => {
                 return (
@@ -23,7 +22,6 @@ export const NowPlaying = () => {
               })
             }
           </div>
-        </div>
       </div>
     </div>
   )
