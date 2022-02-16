@@ -6,7 +6,7 @@ const port = 8080;
 
 const app = express();
 
-app.use('/', indexRouter);
+app.use('/', cors(), indexRouter);
 app.use(cors());
 
 app.use(express.json());
