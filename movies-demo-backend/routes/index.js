@@ -3,7 +3,7 @@ const router = express.Router();
 const { MongoClient, ObjectId } = require('mongodb');
 
 
-router.get('/', async (req, res, next) => {
+router.get('/movies', async (req, res, next) => {
   try{
     const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true });
     const db = await client.db('moviesDataBase');
