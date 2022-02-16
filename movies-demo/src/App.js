@@ -10,15 +10,17 @@ import { NotFound } from '../src/views/not-found';
 function App() {
   return (
     <div>
+      <Router>
         <Navbar />
-        <Router>
+        <div className='container box'>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='now-playing' element={<NowPlaying />} />
             <Route path='favorites' element={<Favorites />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
-        </Router>
+        </div>
+      </Router>
     </div>
   );
 }
