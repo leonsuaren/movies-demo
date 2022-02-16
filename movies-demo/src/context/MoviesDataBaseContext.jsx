@@ -12,8 +12,6 @@ export const MoviesDataBasePovider = ({ children }) => {
     })
   }, []);
 
-  console.log(moviesDataBase);
-
   return (
     <MoviesDataBaseContext.Provider value={{ moviesDataBase }}>
       {children}

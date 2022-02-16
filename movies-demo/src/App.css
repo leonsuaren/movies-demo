@@ -1,3 +1,14 @@
 .box {
   margin-top: 50px;
 }
+
+.cardSize {
+  width: 18rem;
+  height: 25rem;
+  margin: 5px
+}
+
+.imgSize {
+  height: 100%;
+  width: 100%;
+}
