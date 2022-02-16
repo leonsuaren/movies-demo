@@ -1,12 +1,12 @@
 const express = require('express');
-const indexRouter = require('./routes/index');
+const moviesRouter = require('./routes/movies');
 const cors = require('cors');
 
 const port = 8080;
 
 const app = express();
 
-app.use('/', cors(), indexRouter);
+app.use('/', cors(), moviesRouter);
 app.use(cors());
 
 app.use(express.json());
