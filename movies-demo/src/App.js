@@ -8,21 +8,25 @@ import { NowPlaying } from '../src/views/now-playing';
 import { Footer } from '../src/components/footer';
 import { NotFound } from '../src/views/not-found';
 
+import { MoviesDataBasePovider } from './context';
+
 function App() {
   return (
     <div>
-      <Router>
-        <Navbar />
-        <div className='container box'>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='now-playing' element={<NowPlaying />} />
-            <Route path='favorites' element={<Favorites />} />
-            <Route path='*' element={<NotFound />} />
-          </Routes>
-        </div>
-        <Footer />
-      </Router>
+      <MoviesDataBasePovider>
+        <Router>
+          <Navbar />
+          <div className='container box'>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='now-playing' element={<NowPlaying />} />
+              <Route path='favorites' element={<Favorites />} />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          </div>
+          <Footer />
+        </Router>
+      </MoviesDataBasePovider>
     </div>
   );
 }
