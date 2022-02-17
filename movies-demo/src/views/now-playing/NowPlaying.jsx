@@ -8,10 +8,11 @@ import { useGetMovies } from '../../hooks/api';
 import anime from 'animejs';
 import { movieAnimation } from '../../animation';
 import { Spinner } from '../../components/spinner';
+import { ServerError } from '../../components/server-error';
 
 export const NowPlaying = () => {
   const moviesDataBaseContext = useContext(MoviesDataBaseContext);
-  let [ loading, movies, error ] = useGetMovies();
+  let [loading, movies, error] = useGetMovies();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -36,24 +37,24 @@ export const NowPlaying = () => {
         <h1>Now Playing</h1>
       </div>
       <div className="container ">
-       { loading ? <Spinner /> :
-         <div className="grid">
-          {
-            movies.map((movie, key) => {
-              return (
-                <div key={key} className="card cardSize movieAnime">
-                  <button className='imageButton' onClick={() => handleOnClick(movie._id)}>
-                    <img src={movie.poster_path} className="card-img-top imgSize" alt={movie.original_title} />
-                  </button>
-                </div>
-              )
-            })
-          }
-          {
-            error && <p>Error Occured</p>
-          }
-        </div>
-      }
+        {loading ? <Spinner /> :
+          <div className="grid">
+            {
+              movies.map((movie, key) => {
+                return (
+                  <div key={key} className="card cardSize movieAnime">
+                    <button className='imageButton' onClick={() => handleOnClick(movie._id)}>
+                      <img src={movie.poster_path} className="card-img-top imgSize" alt={movie.original_title} />
+                    </button>
+                  </div>
+                )
+              })
+            }
+          </div>
+        }
+        {
+          error && <ServerError />
+        }
       </div>
     </div>
   )
