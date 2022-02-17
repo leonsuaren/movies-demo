@@ -6,7 +6,6 @@ import { actorsAnimation } from '../../animation';
 
 export const Actors = () => {
   const [loading, actors, error] = useGetActors();
-  console.log({ actors: loading })
   useEffect(() => {
     anime(actorsAnimation);
   }, []);

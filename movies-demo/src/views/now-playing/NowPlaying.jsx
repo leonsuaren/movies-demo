@@ -7,13 +7,12 @@ import { useGetMovies } from '../../hooks/api';
 
 import anime from 'animejs';
 import { movieAnimation } from '../../animation';
+import { Spinner } from '../../components/spinner';
 
 export const NowPlaying = () => {
   const moviesDataBaseContext = useContext(MoviesDataBaseContext);
   let [ loading, movies, error ] = useGetMovies();
   const navigate = useNavigate();
-
-  console.log({ movies: loading });
 
   useEffect(() => {
     anime(movieAnimation);
@@ -37,8 +36,9 @@ export const NowPlaying = () => {
         <h1>Now Playing</h1>
       </div>
       <div className="container ">
-        <div className="grid">
-          { loading ? 'loading' :
+       { loading ? <Spinner /> :
+         <div className="grid">
+          {
             movies.map((movie, key) => {
               return (
                 <div key={key} className="card cardSize movieAnime">
@@ -53,6 +53,7 @@ export const NowPlaying = () => {
             error && <p>Error Occured</p>
           }
         </div>
+      }
       </div>
     </div>
   )

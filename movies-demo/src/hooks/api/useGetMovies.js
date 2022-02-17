@@ -9,7 +9,7 @@ export const useGetMovies = () => {
   useEffect(() => {
     setLoading(true);
     axios.get('http://localhost:8080/movies').then((response) => {
-      setTimeout(() => {setLoading(false);}, 3000);
+      setTimeout(() => {setLoading(false);}, 2000);
       
       setResults(response.data.movies);
     }).catch((error) => {

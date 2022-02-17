@@ -35,3 +35,13 @@
 .tableAnimation {
   opacity: 0;
 }
+
+.spinner {
+  width: 150px;
+  height: 150px;
+  align-self: center;
+}
+
+.spinnerWrapper {
+  height: 400px;
+}
