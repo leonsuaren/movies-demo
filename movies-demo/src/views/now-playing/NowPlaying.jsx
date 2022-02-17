@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -12,6 +12,8 @@ export const NowPlaying = () => {
   const moviesDataBaseContext = useContext(MoviesDataBaseContext);
   let [ loading, movies, error ] = useGetMovies();
   const navigate = useNavigate();
+
+  console.log({ movies: loading });
 
   useEffect(() => {
     anime(movieAnimation);

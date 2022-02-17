@@ -1,3 +1,4 @@
 import { useGetMovies } from './useGetMovies';
-export { useGetMovies }
-export default { useGetMovies };
+import { useGetActors } from './useGetActors';
+export { useGetMovies, useGetActors }
+export default { useGetMovies, useGetActors };

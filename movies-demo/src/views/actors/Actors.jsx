@@ -1,13 +1,12 @@
-import React, { useContext, useEffect } from 'react';
-import { MoviesDataBaseContext } from '../../context';
+import React, { useEffect } from 'react';
+import { useGetActors } from '../../hooks/api';
 
 import anime from 'animejs';
 import { actorsAnimation } from '../../animation';
 
 export const Actors = () => {
-  const moviesDataBaseContext = useContext(MoviesDataBaseContext);
-  const actors = moviesDataBaseContext.actorsDataBase;
-
+  const [loading, actors, error] = useGetActors();
+  console.log({ actors: loading })
   useEffect(() => {
     anime(actorsAnimation);
   }, []);
@@ -32,9 +31,9 @@ export const Actors = () => {
                 <tr key={key}>
                   <td>{actor.name}</td>
                   <td>{actor.popularity}</td>
-                  {actor.known_for.map((known) => {
-                    return(
-                      <td>{known.original_title}</td>
+                  {actor.known_for.map((known, key) => {
+                    return (
+                      <td key={key}>{known.original_title}</td>
                     )
                   })}
                 </tr>
