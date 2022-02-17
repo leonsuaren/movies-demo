@@ -12,17 +12,19 @@ export const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link to='now-playing' className="nav-link active" aria-current="page" href="#">Now Playing</Link>
+              <Link to='now-playing' className="nav-link active">Now Playing</Link>
             </li>
             <li className="nav-item">
-              <Link to='favorites' className="nav-link" href="#">Favorites</Link>
+              <Link to='favorites' className="nav-link">Favorites</Link>
+            </li>
+            <li className="nav-item">
+              <Link to='actors' className="nav-link">Actors</Link>
             </li>
           </ul>
           <div className="form-group md-3">
             <select className="form-select" aria-label="Default select example">
               <option defaultValue>MOVIE</option>
               <option value="actor">ACTOR</option>
-
             </select>
           </div>
           <form className="d-flex">
