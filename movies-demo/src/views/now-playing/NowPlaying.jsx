@@ -1,20 +1,25 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 import { MoviesDataBaseContext } from '../../context';
+import { useGetMovies } from '../../hooks/api';
 
 import anime from 'animejs';
 import { movieAnimation } from '../../animation';
 
 export const NowPlaying = () => {
   const moviesDataBaseContext = useContext(MoviesDataBaseContext);
-  const movies = moviesDataBaseContext.moviesDataBase;
+  let [ loading, movies, error ] = useGetMovies();
   const navigate = useNavigate();
 
   useEffect(() => {
-    anime(movieAnimation)
+    anime(movieAnimation);
   }, []);
+
+  useEffect(() => {
+    console.log(error);
+  }, [error]);
 
   const handleOnClick = async (_id) => {
     const oneMovie = await axios.get(`http://localhost:8080/movies/${_id}`).then((response) => {
@@ -31,7 +36,7 @@ export const NowPlaying = () => {
       </div>
       <div className="container ">
         <div className="grid">
-          {
+          { loading ? 'loading' :
             movies.map((movie, key) => {
               return (
                 <div key={key} className="card cardSize movieAnime">
@@ -41,6 +46,9 @@ export const NowPlaying = () => {
                 </div>
               )
             })
+          }
+          {
+            error && <p>Error Occured</p>
           }
         </div>
       </div>
