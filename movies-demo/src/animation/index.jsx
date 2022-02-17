@@ -1,1 +1,1 @@
-export { movieAnimation } from './anime';
+export { movieAnimation, actorsAnimation } from './anime';

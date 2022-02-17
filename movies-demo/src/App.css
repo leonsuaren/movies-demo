@@ -31,3 +31,7 @@
   width: 500px;
   margin: 0 auto;
 }
+
+.tableAnimation {
+  opacity: 0;
+}
