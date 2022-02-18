@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import anime from 'animejs';
+import { carouselAnimation } from '../../animation';
 
 export const Carousel = () => {
+
+  useEffect(() => {
+    anime(carouselAnimation);
+  }, []);
+
   return (
-    <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleCaptions" className="carousel slide carouselAnimation" data-bs-ride="carousel">
       <div className="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>

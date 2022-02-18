@@ -12,3 +12,15 @@ export const actorsAnimation = {
   delay: 200,
   easing: 'easeInQuad'
 }
+
+export const carouselAnimation = {
+  targets: '.carouselAnimation',
+  opacity: [0, 1],
+  delay: 200,
+  easing: 'easeInQuad'
+};
+
+export const navbarAnimation = {
+  targets: '.navbarAnimation',
+  translateY: [ -100, 0 ]
+};

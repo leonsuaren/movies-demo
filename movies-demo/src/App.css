@@ -45,3 +45,7 @@
 .spinnerWrapper {
   height: 400px;
 }
+
+.carouselAnimation {
+  opacity: 0;
+}
