@@ -35,13 +35,25 @@ router.get('/favorites', async (req, res, next) => {
     const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true });
     const db = await client.db('moviesDataBase');
 
-    const query = { favorite: true };
+    const query = { favorite: 'true' };
     const favoriteMovie = await db.collection('movies').find(query).toArray();
     res.status(200).json({ message: 'Favorites', favoriteMovie });
-
   } catch (error) {
     res.status(404).json({ error: error });
   }
-})
+});
+
+router.post('/movies/:_id', async (req, res, next) => {
+  try {
+    const _id = req.params._id;
+    const favoriteQuery = req.query.favorite;
+    const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true });
+    const db = await client.db('moviesDataBase');
+    const favorite = await db.collection('movies').updateOne({_id: ObjectId(_id)}, {$set: { "favorite": favoriteQuery }});
+    res.status(200).json({ message: 'favorite', favorite });
+  } catch (error) {
+    res.status(404).json({ error: error });
+  }
+});
 
 module.exports = router;
