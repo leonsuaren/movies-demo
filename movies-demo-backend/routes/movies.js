@@ -47,6 +47,7 @@ router.post('/movies/:_id', async (req, res, next) => {
   try {
     const _id = req.params._id;
     const favoriteQuery = req.query.favorite;
+    console.log(favoriteQuery);
     const client = await MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUnifiedTopology: true });
     const db = await client.db('moviesDataBase');
     const favorite = await db.collection('movies').updateOne({_id: ObjectId(_id)}, {$set: { "favorite": favoriteQuery }});
