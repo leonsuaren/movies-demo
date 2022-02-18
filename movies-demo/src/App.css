@@ -54,3 +54,8 @@
   display: grid;
   justify-content: center;
 }
+
+.starButton {
+  background: transparent;
+  border: none;
+}

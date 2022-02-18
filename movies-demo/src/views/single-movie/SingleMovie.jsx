@@ -1,22 +1,36 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { MoviesDataBaseContext } from '../../context';
+import axios from 'axios';
 
 import anime from 'animejs';
-import { movieAnimation } from '../../animation/anime'
+import { movieAnimation } from '../../animation/anime';
+
+import { Star } from '../../components/star';
 
 export const SingleMovie = () => {
   const moviesDataBaseContext = useContext(MoviesDataBaseContext);
   const singleMovie = moviesDataBaseContext.singleMovie;
+  const [ fillStar, setFillStar ] = useState(false);
 
   useEffect(() => {
     anime(movieAnimation);
   }, []);
+
+  const onSelectedFavorite = () => {
+    axios.post(`http://localhost:8080/movies/${singleMovie._id}?favorite=${fillStar}`)
+    setFillStar(s => !s);
+  };
+
+  console.log(fillStar);
 
   return (
     <div>
       <div className="container movieAnime">
         <div className="row">
           <div className="text-center singleMovieContainer">
+            <button className='starButton' onClick={onSelectedFavorite}>
+              <Star fillStar={fillStar} />
+            </button>
             <h1>
               {singleMovie.original_title}
             </h1>
@@ -24,7 +38,7 @@ export const SingleMovie = () => {
             <p className="overview-header">Movie Synopsis:
             <span className="single-movie-overview">
                 {singleMovie.overview}
-            </span>
+              </span>
             </p>
           </div>
         </div>

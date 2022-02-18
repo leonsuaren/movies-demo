@@ -12,7 +12,7 @@ const NotFavorites = () => {
   return (
     <div>
       <h1>I'm not your favorite!!</h1>
-      <img src='minion-mad.png' />
+      <img src='minion-mad.png' alt='Not your favorite'/>
     </div>
   )
 };
