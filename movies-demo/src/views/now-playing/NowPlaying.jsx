@@ -19,10 +19,6 @@ export const NowPlaying = () => {
     anime(movieAnimation);
   }, []);
 
-  useEffect(() => {
-    console.log(error);
-  }, [error]);
-
   const handleOnClick = async (_id) => {
     const oneMovie = await axios.get(`http://localhost:8080/movies/${_id}`).then((response) => {
       return response.data.movie

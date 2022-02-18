@@ -20,7 +20,7 @@ export const SingleMovie = () => {
             <h1>
               {singleMovie.original_title}
             </h1>
-            <a href={singleMovie.homepage}><img src='public/posters/coco.jpeg' /></a>
+            <a href={singleMovie.homepage} target="_blank"><img src='public/posters/coco.jpeg' /></a>
             <p className="overview-header">Movie Synopsis:
             <span className="single-movie-overview">
                 {singleMovie.overview}
@@ -34,7 +34,7 @@ export const SingleMovie = () => {
           More Details
         </button>
       </div>
-      <div className="modal fade" id="Modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal fade" id="Modal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">

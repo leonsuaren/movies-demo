@@ -49,3 +49,8 @@
 .carouselAnimation {
   opacity: 0;
 }
+
+.notFavoriteWrapper {
+  display: grid;
+  justify-content: center;
+}
