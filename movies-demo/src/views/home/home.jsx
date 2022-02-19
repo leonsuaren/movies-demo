@@ -4,7 +4,9 @@ import { Carousel } from '../../components/carousel';
 export const Home = () => {
   //Home view FIRST SPRINT
   //Carousel SECOND SPRINT
-  return(
-    <Carousel />
+  return (
+    <div data-test='home-component'>
+      <Carousel />
+    </div>
   )
 };
