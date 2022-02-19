@@ -8,7 +8,9 @@ export const Navbar = () => {
   useEffect(() => {
     anime(navbarAnimation);
   }, []);
-
+  //navbar and container-fluid FIRST SPRINT
+  //Links Movies Demo, Now Playing, Favorites, Actors FIRST SPRINT
+  //Select and form Third SPRINT
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light navbarAnimation">
       <div className="container-fluid">

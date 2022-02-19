@@ -1,6 +1,7 @@
 import React from 'react';
 
 export const Footer = () => {
+  //Footer, its four sections, brand and Team MIT xPro FIRST SPRINT all in one ticket
   return(
     <footer className="pt-4 my-md-5 pt-md-5 border-top container">
     <div className="row">
