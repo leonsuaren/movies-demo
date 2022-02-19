@@ -11,10 +11,11 @@ export const Navbar = () => {
   //navbar and container-fluid FIRST SPRINT
   //Links Movies Demo, Now Playing, Favorites, Actors FIRST SPRINT
   //Select and form Third SPRINT
+  //toggler button and collapse navbar to first pair programming session.
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light navbarAnimation">
       <div className="container-fluid">
-        <Link to='/' className="navbar-brand" href="#">Movies Demo</Link>
+        <Link to='/' className="navbar-brand">Movies Demo</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>

@@ -11,7 +11,7 @@ import { SingleMovie } from '../src/views/single-movie';
 import { Actors } from '../src/views/actors';
 
 import { MoviesDataBasePovider } from './context';
-
+//container and box classes SECOND SPRINT
 function App() {
   return (
     <div>
