@@ -27,6 +27,8 @@ export const NowPlaying = () => {
     navigate(`movies/${_id}`)
   }
 
+  //now playing view SECOND SPRINT ()
+
   return (
     <div>
       <div>

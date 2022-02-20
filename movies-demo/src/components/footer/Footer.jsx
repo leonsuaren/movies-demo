@@ -27,6 +27,7 @@ export const Footer = () => {
         <ul className="list-unstyled text-small">
           <li className="mb-1"><a className="link-secondary text-decoration-none" href="#">The Stack</a></li>
           <li className="mb-1"><a className="link-secondary text-decoration-none" href="#">Resources</a></li>
+          <li className="mb-1"><a className="link-secondary text-decoration-none" target="_blank" href="https://github.com/leonsuaren/movies-demo">Github Repository</a></li>
         </ul>
       </div>
       <div className="col-6 col-md">
