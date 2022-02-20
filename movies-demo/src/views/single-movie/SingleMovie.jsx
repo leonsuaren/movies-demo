@@ -21,7 +21,7 @@ export const SingleMovie = () => {
     setFillStar(s => !s);
   };
 
-  console.log(fillStar);
+  console.log(singleMovie.poster_path);
 
   return (
     <div>
@@ -34,11 +34,11 @@ export const SingleMovie = () => {
             <h1>
               {singleMovie.original_title}
             </h1>
-            <a href={singleMovie.homepage} target="_blank"><img src='public/posters/coco.jpeg' /></a>
+            <a href={singleMovie.homepage} target="_blank"><img src={singleMovie.poster_path} /></a>
             <p className="overview-header">Movie Synopsis:
             <span className="single-movie-overview">
                 {singleMovie.overview}
-              </span>
+            </span>
             </p>
           </div>
         </div>
