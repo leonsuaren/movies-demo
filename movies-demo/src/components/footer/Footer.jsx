@@ -4,7 +4,7 @@ export const Footer = () => {
   //Footer, its four sections, brand and Team MIT xPro FIRST SPRINT all in one ticket
   //secctions features, about the project and about the team FIRST SPRINT
   return(
-    <footer className="pt-4 my-md-5 pt-md-5 border-top container">
+    <footer className="pt-4 my-md-5 pt-md-5 border-top container" data-test='footer-component'>
     <div className="row">
       <div className="col-12 col-md">
         <img className="mb-2" src="movies-logo.png" alt="" width="100" height="100"/>
