@@ -11,7 +11,7 @@ export const Actors = () => {
   }, []);
 
   return (
-    <div>
+    <div data-test='actors-component'>
       <div>
         <h1>Actors</h1>
       </div>
