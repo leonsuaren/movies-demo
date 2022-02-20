@@ -13,7 +13,7 @@ export const Navbar = () => {
   //Select and form Third SPRINT
   //toggler button and collapse navbar to first pair programming session.
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light navbarAnimation">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light navbarAnimation" data-test='navbar-component'>
       <div className="container-fluid">
         <Link to='/' className="navbar-brand">Movies Demo</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
