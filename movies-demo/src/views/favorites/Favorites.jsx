@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import { useGetFavMovies } from '../../hooks/api';
 
@@ -20,14 +19,13 @@ const NotFavorites = () => {
 export const Favorites = () => {
   let [loading, favorites, error] = useGetFavMovies();
   let favoritesCount = favorites.length;
-  const navigate = useNavigate();
 
   useEffect(() => {
     anime(movieAnimation);
   }, []);
 
   return (
-    <div className='notFavoriteWrapper'>
+    <div className='notFavoriteWrapper' data-test='favorites-component'>
       { favoritesCount <= 0 ? '' :
         <div>
           <h1>Favorites</h1>
