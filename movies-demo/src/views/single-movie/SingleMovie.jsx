@@ -10,18 +10,25 @@ import { Star } from '../../components/star';
 export const SingleMovie = () => {
   const moviesDataBaseContext = useContext(MoviesDataBaseContext);
   const singleMovie = moviesDataBaseContext.singleMovie;
-  const [ fillStar, setFillStar ] = useState(false);
+  const [fillStar, setFillStar] = useState(false);
 
   useEffect(() => {
     anime(movieAnimation);
+    axios.get('http://localhost:8080/favorites').then((res) => {
+      setFillStar(res.data.favoriteMovie.favorite)
+    })
+    //@todo revisar favoritos
   }, []);
 
   const onSelectedFavorite = () => {
-    axios.post(`http://localhost:8080/movies/${singleMovie._id}?favorite=${fillStar}`)
-    setFillStar(s => !s);
+    axios.post(`http://localhost:8080/movies/${singleMovie._id}?favorite=${!fillStar}`)
+      .then(() => {
+        setFillStar(!fillStar);          
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   };
-
-  console.log(singleMovie.poster_path);
 
   return (
     <div>
@@ -34,11 +41,11 @@ export const SingleMovie = () => {
             <h1>
               {singleMovie.original_title}
             </h1>
-            <a href={singleMovie.homepage} target="_blank"><img src={singleMovie.poster_path} /></a>
+            <a href={singleMovie.homepage} target="_blank"><img src={singleMovie.poster_path} className='singleMovieImage'/></a>
             <p className="overview-header">Movie Synopsis:
             <span className="single-movie-overview">
                 {singleMovie.overview}
-            </span>
+              </span>
             </p>
           </div>
         </div>
