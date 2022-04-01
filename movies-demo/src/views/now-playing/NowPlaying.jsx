@@ -25,7 +25,7 @@ export const NowPlaying = () => {
     });
     moviesDataBaseContext.fetchOneMovie(oneMovie)
     navigate(`movies/${_id}`)
-  }
+  };
 
   //now playing view SECOND SPRINT ()
 

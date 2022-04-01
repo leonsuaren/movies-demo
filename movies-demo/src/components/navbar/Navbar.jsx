@@ -28,7 +28,7 @@ export const Navbar = () => {
               <Link to='favorites' className="nav-link">Favorites</Link>
             </li>
             <li className="nav-item">
-              <Link to='actors' className="nav-link">Actors</Link>
+              <Link to='actors' className="nav-link" data-test='actors'>Actors</Link>
             </li>
           </ul>
           <div className="form-group md-3">
