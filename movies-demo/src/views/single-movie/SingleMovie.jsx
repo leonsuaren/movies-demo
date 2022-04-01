@@ -17,7 +17,7 @@ export const SingleMovie = () => {
     axios.get('http://localhost:8080/favorites').then((res) => {
       setFillStar(res.data.favoriteMovie.favorite)
     })
-    //@todo revisar favoritos
+    //@todo revisar favoritos//
   }, []);
 
   const onSelectedFavorite = () => {
